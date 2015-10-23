@@ -28,7 +28,7 @@ Arguments needed -
 2/ Output directory
 3/ Groups file 
 4/ Comparisons file
-
+5/ A 5th optional argument to add an identifier in your file names
 
 Currently there are two protocols in it -
 
