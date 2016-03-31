@@ -12,6 +12,9 @@ This pipeline performs the introductory steps in any RNA Seq analysis:
 - Trimming and aligning the reads for a sample.
 - Counting the reads that align to various genomic features.
 
+**Important**: This pipeline does not attempt any further analysis like DESeq
+or GSEA.
+
 This pipeline is designed to run on a cluster environment, though some slight
 modification of the run script will cause it to run locally.
 
