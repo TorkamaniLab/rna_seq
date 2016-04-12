@@ -9,7 +9,7 @@
 [COMMANDS]
 $TRIMMOMATIC PE {1} {2} {o.fastq} {o.fastq} {o.fastq} {o.fastq} $TRIM_OPTS 
 $BOWTIE2 --very-sensitive -N 1 -p 8 -x HG_19 -q -1 {1.1-1} -2 {1.1-3} -S {o}
-$HTSEQ-COUNT {2.1} $GENE_LIST > {o.counts}
+$HTSEQ-COUNT {2.1} $GTF_FILE > {o.counts}
 
 [PATHS]
 ## Uncomment the versions you want.
@@ -25,7 +25,7 @@ $HTSEQ_COUNT module load python; htseq-count
 
 $HG_19 ../etc/hg_19
 $TRIM_OPTS ILLUMINACLIP:Trimmomatic-0.36/adapters/TruSeq3-PE.fa:2:30:10:2:true LEADING:3 TRAILING:3
-$GENE_LIST ../etc/GENES
+$GTF_FILE ../etc/GENES
 
 [JOB_OPTIONS]
 #PBS -l mem=12gb
