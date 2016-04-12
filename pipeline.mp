@@ -8,7 +8,7 @@
 
 [COMMANDS]
 $TRIMMOMATIC PE {1} {2} {o.fastq} {o.fastq} {o.fastq} {o.fastq} $TRIM_OPTS 
-$BOWTIE2 --very-sensitive -N 1 -p 8 -x HG_19 -q -1 {1.1-1} -2 {1.1-1} -S {o}
+$BOWTIE2 --very-sensitive -N 1 -p 8 -x HG_19 -q -1 {1.1-1} -2 {1.1-3} -S {o}
 $HTSEQ-COUNT {2.1} $GENE_LIST > {o.counts}
 
 [PATHS]
