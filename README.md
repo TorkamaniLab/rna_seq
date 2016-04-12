@@ -16,7 +16,8 @@ This pipeline performs the introductory steps in any RNA Seq analysis:
 or GSEA.
 
 This pipeline is designed to run on a cluster environment, though some slight
-modification of the run script will cause it to run locally.
+modification of the run script will cause it to run locally (see Running
+Locally). 
 
 
 Using this pipeline
@@ -29,7 +30,6 @@ to use, you'll need to edit the metapipe file directly.
 
 ```bash
 $ pip install -r requirements.txt
-$ sh setup.sh
 ```
 
 Once the environment is set up, it's time to run the pipeline on your given
@@ -38,7 +38,7 @@ samples.
 To run the pipeline on a single sample, do the following:
 
 ```bash
-$ sh run_one.sh <read_1_filename> <read_2_filename> 
+$ sh run_one.sh <sample_id> <read_1_filename> <read_2_filename> 
 ```
 
 To run a variety of samples, create a `samples.txt` file containing a line for
@@ -66,3 +66,10 @@ referenced from the main pipeline file.
 
 Shortcut execution scripts are located on the top level and are the preferred
 way to execute the pipeline.
+
+
+Running Locally
+---------------
+
+In order to run this pipeline locally, edit the pipeline.mp file and uncomment
+the paths to the local binaries. Then comment out or remove the cluster binary paths.

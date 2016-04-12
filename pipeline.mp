@@ -7,18 +7,29 @@
 # since: 2016-03-31
 
 [COMMANDS]
-trimmomatic PE {1} {2} {o.fastq} {o.fastq} {o.fastq} {o.fastq} trim_options 
-bowtie2 --very-sensitive -N 1 -p 8 -x HG_19 -q -1 {1.1-1} -2 {1.1-1} -S {o}
-htseq-count {2.1} gene_list > {o.counts}
+$TRIMMOMATIC PE {1} {2} {o.fastq} {o.fastq} {o.fastq} {o.fastq} $TRIM_OPTS 
+$BOWTIE2 --very-sensitive -N 1 -p 8 -x HG_19 -q -1 {1.1-1} -2 {1.1-1} -S {o}
+$HTSEQ-COUNT {2.1} $GENE_LIST > {o.counts}
 
 [PATHS]
-trimmomatic java ../etc/Trimmomatic-0.36/trimmomatic-0.36.jar
-bowtie2 ../etc/bowtie/bowtie2
-htseq-count ../etc/htseq/htseq-count
+## Uncomment the versions you want.
+## Garibaldi
+$TRIMMOMATIC module load trimmomatic; trimmomatic 
+$BOWTIE2 module load bowtie2; bowtie2
+$HTSEQ_COUNT module load python; htseq-count
 
-HG_19 ../etc/hg_19
-trim_options ILLUMINACLIP:Trimmomatic-0.36/adapters/TruSeq3-PE.fa:2:30:10:2:true LEADING:3 TRAILING:3
-gene_list ../etc/GENES
+## Local
+#$TRIMMOMATIC java ../etc/Trimmomatic-0.36/trimmomatic-0.36.jar
+#$BOWTIE2 ../etc/bowtie/bowtie2
+#$HTSEQ_COUNT ../etc/htseq/htseq-count
+
+$HG_19 ../etc/hg_19
+$TRIM_OPTS ILLUMINACLIP:Trimmomatic-0.36/adapters/TruSeq3-PE.fa:2:30:10:2:true LEADING:3 TRAILING:3
+$GENE_LIST ../etc/GENES
+
+[JOB_OPTIONS]
+#PBS -l mem=12gb
+set -e;
 
 [FILES]
 1. __read_1__
