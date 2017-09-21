@@ -29,7 +29,7 @@ sciript or you have different tools you'd like to use, you'll need to edit
 the metapipe file directly.
 
 ```bash
-sh setup.sh path_to_bowtie_index path_to_gtf_file
+$ sh setup.sh path_to_bowtie_index path_to_gtf_file
 ```
 
 Once the environment is set up, it's time to run the pipeline on your given
