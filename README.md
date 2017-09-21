@@ -23,13 +23,13 @@ Locally).
 Using this pipeline
 -------------------
 
-This pipeline is built using metapipe. Before running, please install the
-requirements, and run the setup script to fetch all of the required tools. If
-you don't want to use the setup sciript or you have different tools you'd like
-to use, you'll need to edit the metapipe file directly.
+This pipeline is built using metapipe. Before running, please run the setup 
+script to fetch all of the required tools. If you don't want to use the setup 
+sciript or you have different tools you'd like to use, you'll need to edit 
+the metapipe file directly.
 
 ```bash
-$ pip install -r requirements.txt
+sh setup.sh path_to_bowtie_index path_to_gtf_file
 ```
 
 Once the environment is set up, it's time to run the pipeline on your given
@@ -73,3 +73,6 @@ Running Locally
 
 In order to run this pipeline locally, edit the pipeline.mp file and uncomment
 the paths to the local binaries. Then comment out or remove the cluster binary paths.
+
+**Note**: The Trimmomatic settings has a path inbuilt which depends on the version 
+you're using. You might have to change that if you're running it locally.
