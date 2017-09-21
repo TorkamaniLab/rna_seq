@@ -58,11 +58,8 @@ $ sh run_all.sh samples.txt
 Project Organization
 --------------------
 
-This pipeline relies on a variety of external tools, all of which are
-configured using the `setup.sh` script, and the requirements.txt.
-
-All custom scripts are kept in the project's `bin/` directory and are
-referenced from the main pipeline file.
+This pipeline relies on a variety of external tools. Please make sure the paths
+are up to date for these tools.
 
 Shortcut execution scripts are located on the top level and are the preferred
 way to execute the pipeline.
