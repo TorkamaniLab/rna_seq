@@ -9,7 +9,7 @@
 [COMMANDS]
 $TRIMMOMATIC PE {1} {2} {o.fastq} {o.fastq} {o.fastq} {o.fastq} $TRIM_OPTS 
 
-#PBS -l npus=8
+#PBS -l ncpus=8
 #PBS -l walltime=100:00:00
 $BOWTIE2 --very-sensitive -N 1 -p 8 -x BOWTIE_INDEX -q -1 {1.1-1} -2 {1.1-3} -S {o}
 
